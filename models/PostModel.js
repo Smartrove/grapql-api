@@ -8,6 +8,9 @@ const PostSchema = new mongoose.Schema({
   description: {
     type: String,
   },
+  state: {
+    type: String,
+  },
 });
 
 const Post = mongoose.model("post", PostSchema);

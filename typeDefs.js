@@ -5,11 +5,13 @@ const typeDefs = gql`
     id: ID
     title: String
     description: String
+    state: String
   }
 
   type Query {
     hello: String
     getAllPosts: [Post]
+    getPost(id: ID): Post
   }
   input PostInput {
     title: String
@@ -17,6 +19,8 @@ const typeDefs = gql`
   }
   type Mutation {
     createPost(post: PostInput): Post
+    deletePost(id: ID): String
+    updatePost(id: ID, post: PostInput): String
   }
 `;
 
